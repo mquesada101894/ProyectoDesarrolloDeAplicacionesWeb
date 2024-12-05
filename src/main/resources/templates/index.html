@@ -1,21 +1,13 @@
 <!DOCTYPE html>
-<!--HTML Dinamica-->
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-    <head th:replace="~{layout/plantilla :: head}">
-        <title>TechShop</title>
-        <meta charset="UTF-8"/>
-    </head>
-    
-    <body>
-
-        <header th:replace="~{layout/plantilla :: header}">
-        </header>
-
-        <button type="button" class="btn btn-primary">Primary</button>
-        
-        <footer th:replace="~{layout/plantilla :: footer}">
-            &COPY; [[#{plantilla.derechos}]]
-        </footer>
-    </body>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>TechShop</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+</head>
+<body>
+    <!-- Redirige a inicio.html -->
+    <div th:replace="~{inicio}"></div>
+</body>
 </html>

@@ -1,6 +1,7 @@
 package com.proyecto.models;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+//import javax.persistence.*;
 
 @Entity
 public class Usuario {
@@ -48,9 +49,5 @@ public class Usuario {
 
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
-    }
-
-    public Object getPassword() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

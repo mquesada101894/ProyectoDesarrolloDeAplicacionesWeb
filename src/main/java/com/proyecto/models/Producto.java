@@ -1,6 +1,7 @@
 package com.proyecto.models;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+//import javax.persistence.*;
 
 @Entity
 public class Producto {
@@ -13,7 +14,20 @@ public class Producto {
     private String descripcion;
     private String categoria;
     private double precio;
+    private String imagen;
 
+    public Producto(String nombre, String descripcion, String categoria, double precio, String imagen) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.categoria = categoria;
+        this.precio = precio;
+        this.imagen = imagen;
+    }
+    
+    // Constructor sin parámetros (requerido por Hibernate)
+    public Producto() {
+    }
+    
     // Getters y setters
 
     public Long getId() {
@@ -55,4 +69,14 @@ public class Producto {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+    
+    
 }

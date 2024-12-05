@@ -21,6 +21,6 @@ public class UsuarioService {
     public boolean autenticarUsuario(String correo, String password) {
         // Lógica de autenticación
         Usuario usuario = usuarioRepository.findByCorreo(correo);
-        return usuario != null && usuario.getPassword().equals(password);
+        return usuario != null && usuario.getContraseña().equals(password);
     }
 }

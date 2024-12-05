@@ -1,6 +1,7 @@
 package com.proyecto.models;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+//import javax.persistence.*;
 
 @Entity
 public class Carrito {
