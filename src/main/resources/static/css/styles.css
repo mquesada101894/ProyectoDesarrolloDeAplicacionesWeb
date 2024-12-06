@@ -1,12 +1,8 @@
 main {
-    flex: 1; /* Hace que el contenido principal ocupe todo el espacio disponible */
-    padding-bottom: 20px; /* Asegura que no se superponga con el footer */
-
+   padding-top: 92px;
 }
 
 body{
-    display: flex;
-    flex-direction: column; /* Coloca el contenido en una columna */
     margin: 0;
     padding: 0;
 }  
@@ -17,35 +13,21 @@ h1{
     text-align: center;
 }
 
-header{
-    position: fixed;
-    background-color: blue;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 92px;
+header {
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
-aside{
-    position: fixed;
-    background-color: #6666ff;
-    top: 92px;
-    left: 0;
-    width: 20%;
-    bottom: 20px;
-    padding: 10px;
+
+aside {
+    margin: 0;
 }
 
-section{
-    position: fixed;
-    background-color: bisque;
-    top: 92px;
-    left: 20%;
-    width: 80%;
-    bottom: 20px;
-    padding: 10px;
-    overflow-y: scroll;
+section {
+    padding-top: 92px;
 }
+
 
 footer{
     background-color: #333;
@@ -54,6 +36,10 @@ footer{
     padding: 10px 0;
     position: relative;
     width: 100%; /* Asegura que el footer abarque todo el ancho */
+}
+
+.container {
+    padding-top: 30px; /* La altura del header */
 }
 
 .navegacion{
