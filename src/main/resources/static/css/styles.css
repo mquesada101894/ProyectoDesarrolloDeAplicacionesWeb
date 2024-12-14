@@ -76,3 +76,52 @@ footer{
 .nav-menu-link:hover{
     background-color: black;
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 10px 20px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaciado entre los enlaces */
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaciado entre los botones y el cuadro de búsqueda */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espaciado entre el input y el botón de búsqueda */
+}
+
+.search-bar input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.btn {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #007bff;
+    color: white;
+}

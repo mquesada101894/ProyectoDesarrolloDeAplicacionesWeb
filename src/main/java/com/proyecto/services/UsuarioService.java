@@ -3,6 +3,7 @@ package com.proyecto.services;
 import com.proyecto.models.Usuario;
 import com.proyecto.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -11,16 +12,29 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+
+    // Registrar un usuario con encriptación de contraseña
     public boolean registrarUsuario(Usuario usuario) {
-        // Lógica para registrar usuario
-        // Verificar si el correo ya existe
-        return !usuarioRepository.existsByCorreo(usuario.getCorreo()) &&
-               usuarioRepository.save(usuario) != null;
+        if (usuarioRepository.existsByCorreo(usuario.getCorreo())) {
+            return false; // Correo ya registrado
+        }
+        // Encriptar la contraseña antes de guardarla
+        usuario.setContraseña(passwordEncoder.encode(usuario.getContraseña()));
+        usuarioRepository.save(usuario);
+        return true;
     }
 
+    // Autenticar usuario
     public boolean autenticarUsuario(String correo, String password) {
-        // Lógica de autenticación
         Usuario usuario = usuarioRepository.findByCorreo(correo);
-        return usuario != null && usuario.getContraseña().equals(password);
+        // Verificar si el usuario existe y si la contraseña coincide
+        return usuario != null && passwordEncoder.matches(password, usuario.getContraseña());
+    }
+
+    public Usuario findByNombre(String nombre) {
+        Usuario usuario = usuarioRepository.findByNombre(nombre);
+        return usuario;
     }
 }

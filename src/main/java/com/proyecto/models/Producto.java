@@ -15,13 +15,15 @@ public class Producto {
     private String categoria;
     private double precio;
     private String imagen;
+    private boolean enOferta;
 
-    public Producto(String nombre, String descripcion, String categoria, double precio, String imagen) {
+    public Producto(String nombre, String descripcion, String categoria, double precio, String imagen, boolean enOferta) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.categoria = categoria;
         this.precio = precio;
         this.imagen = imagen;
+        this.enOferta = enOferta;
     }
     
     // Constructor sin parámetros (requerido por Hibernate)
@@ -29,6 +31,14 @@ public class Producto {
     }
     
     // Getters y setters
+    
+    public boolean isEnOferta() {
+        return enOferta;
+    }
+    
+    public void setEnOferta(boolean enOferta) {
+        this.enOferta = enOferta;
+    }
 
     public Long getId() {
         return id;

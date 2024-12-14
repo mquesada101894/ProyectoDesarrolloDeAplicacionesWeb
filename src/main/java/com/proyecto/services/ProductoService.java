@@ -24,4 +24,13 @@ public class ProductoService {
         Optional<Producto> producto = productoRepository.findById(id);
         return producto.orElse(null); // Retorna el producto si existe, o null si no existe
     }
+    
+    public List<Producto> obtenerProductosEnOferta() {
+        return productoRepository.findByEnOfertaTrue();
+    }
+    
+    public List<Producto> buscarProductosPorNombre(String nombre) {
+        return productoRepository.findByNombreContainingIgnoreCase(nombre);
+    }
+
 }

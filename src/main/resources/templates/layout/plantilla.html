@@ -11,6 +11,8 @@
         <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
         <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
         <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+        <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+
     </head>
 
     <body>
@@ -24,22 +26,28 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav me-auto">
+                        <!-- Menú de navegación -->
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="nav-link active" href="/">Inicio</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/tienda">Tienda</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/ofertas">Ofertas</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/contacto">Contacto</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/productos">Productos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/productos/ofertas">Ofertas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/productos/contacto">Contacto</a></li>
                         </ul>
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Buscar productos..." aria-label="Buscar">
-                                <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i>
-                                    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-                                </button>
+                        <!-- Botones de registro e inicio de sesión -->
+                        <div class="d-flex align-items-center me-3">
+                            <a href="/registro" class="btn btn-outline-light me-2">Registrarse</a>
+                            <a href="/login" class="btn btn-success">Iniciar Sesión</a>
+                        </div>
+                        <!-- Barra de búsqueda -->
+                        <form class="d-flex" action="/productos/busqueda" method="get">
+                            <input class="form-control me-2" type="search" name="q" placeholder="Buscar productos" aria-label="Buscar" required>
+                                <button class="btn btn-outline-success" type="submit">Buscar</button>
                         </form>
                     </div>
                 </div>
             </nav>
         </header>
+
 
 
         <footer th:fragment="footer" class="p-2 mt-5 bg-info text-white text-center fixed-bottom lead">
